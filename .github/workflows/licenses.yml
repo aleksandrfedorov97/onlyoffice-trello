@@ -17,6 +17,14 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 22
+      - name: Install Dependencies - Root
+        run: yarn install
+      - name: Install Dependencies - Client
+        run: npm install
+        working-directory: ./client
+      - name: Install Dependencies - Server
+        run: yarn install
+        working-directory: ./server
       - name: Get Repository License
         id: license
         run: |
